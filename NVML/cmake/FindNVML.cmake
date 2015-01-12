@@ -47,15 +47,15 @@
 
 #TODO: Should GPU_DEPLOYMENT_KIT_ROOT_DIR override the default locations?
 if( CMAKE_SYSTEM_NAME STREQUAL "Windows"  )
-  set( NVML_LIB_PATHS "C:\Program Files\NVIDIA Corporation\GDK" )
+  set( NVML_LIB_PATHS "C:/Program Files/NVIDIA Corporation/GDK/nvml/lib" )
   if(GPU_DEPLOYMENT_KIT_ROOT_DIR)
-    list(APPEND NVML_LIB_PATHS "${GPU_DEPLOYMENT_KIT_ROOT_DIR}\nvml\lib")
+    list(APPEND NVML_LIB_PATHS "${GPU_DEPLOYMENT_KIT_ROOT_DIR}/nvml/lib")
   endif()
   set(NVML_NAMES nvml)
   
-  set( NVML_INC_PATHS "C:\Program Files\NVIDIA Corporation\GDK\nvml\include" )
+  set( NVML_INC_PATHS "C:/Program Files/NVIDIA Corporation/GDK/nvml/include" )
   if(GPU_DEPLOYMENT_KIT_ROOT_DIR)
-    list(APPEND NVML_INC_PATHS "${GPU_DEPLOYMENT_KIT_ROOT_DIR}\nvml\include")
+    list(APPEND NVML_INC_PATHS "${GPU_DEPLOYMENT_KIT_ROOT_DIR}/nvml/include")
   endif()
 else()
   set( NVML_LIB_PATHS /usr/lib64 )
